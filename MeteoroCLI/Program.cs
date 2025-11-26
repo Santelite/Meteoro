@@ -1,2 +1,2 @@
-﻿var meteoro = new MeteoroCLI.Meteoro();
+﻿var meteoro = new Meteoro();
 meteoro.Predecir();
