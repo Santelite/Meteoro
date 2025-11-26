@@ -43,7 +43,7 @@ namespace MeteoroCLI
                 for (int j = 0; j < result.Columna; j++) // fila de b
                 {
                     double sum = 0;
-                    for (int k = 0; k < a.Columna; k++) // The shared dimension
+                    for (int k = 0; k < a.Columna; k++)
                     {
                         sum += a.Data[i, k] * b.Data[k, j];
                     }
