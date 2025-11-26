@@ -100,5 +100,34 @@ namespace MeteoroCLI
         }
 
 
+        // algo para "aplicar" funciones a cada elemento de la matriz
+        public Matriz Funcion(Func<double, double> func)
+        {
+            Matriz result = new Matriz(Filas, Columna);
+            for (int i = 0; i < Filas; i++)
+                for (int j = 0; j < Columna; j++)
+                    result.Data[i, j] = func(Data[i, j]);
+            return result;
+        }
+
+        // imprimir toda la matriz
+        public void ImprimirMat()
+        {
+            for (int i = 0; i < Filas; i++)
+            {
+                for (int j = 0; j < Columna; j++)
+                    Console.Write($"{Data[i, j]:F4}\t");
+                Console.WriteLine();
+            }
+        }
+
+        // convertir un array a una matriz pq los datos de open meteo vienen asi
+        public static Matriz ConvArray(double[] arr)
+        {
+            Matriz m = new Matriz(arr.Length, 1);
+            for (int i = 0; i < arr.Length; i++)
+                m.Data[i, 0] = arr[i];
+            return m;
+        }
     }
 }
